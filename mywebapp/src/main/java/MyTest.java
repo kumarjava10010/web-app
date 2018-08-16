@@ -4,6 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.bank.persistance.dao.CustomerDaoIfc;
+import com.bank.persistance.dao.CustomerDaoImpl;
 import com.bank.persistance.model.AcctInfo;
 import com.bank.persistance.model.Customer;
 import com.bank.service.BankServiceIfc;
@@ -14,10 +15,11 @@ public class MyTest {
 	public static void main(String[] args) {
 		ApplicationContext appContext = new ClassPathXmlApplicationContext("application-context.xml");
 		
-		/*BankServiceIfc bankService = (BankServiceIfc)appContext.getBean("bankService");
+		
+		BankServiceIfc bankService = (BankServiceIfc)appContext.getBean("bankService");
 		
 		AcctInfo accountInfo = new AcctInfo();
-		accountInfo.setAcctNumber(1239);
+		accountInfo.setAcctNumber(1210);
 		accountInfo.setAcctType("C");
 		accountInfo.setBalance("1000.00");
 		accountInfo.setLastupdatedby("Robert");
@@ -25,12 +27,14 @@ public class MyTest {
 		
 		bankService.deposit(accountInfo);
 		
-		AcctInfo accountInfo1 = bankService.getAcctSummary(1238);
+		AcctInfo accountInfo1 = bankService.getAcctSummary(1210);
 		
 		System.out.println(accountInfo1.getAcctType());
-		*/
 		
-		CustomerDaoIfc customerDao = (CustomerDaoIfc) appContext.getBean("customerDao");
+		//Test
+		
+		
+		/*CustomerDaoIfc customerDao = (CustomerDaoIfc) appContext.getBean("customerDao");
 		
 		Customer customerObj = new Customer();
 		
@@ -49,7 +53,7 @@ public class MyTest {
 		
 		Customer customerObjFromDB = customerDao.findByAcctNumber(1234);
 		
-		System.out.println(customerObjFromDB.toString());
+		System.out.println(customerObjFromDB.toString());*/
 		
 	}
 

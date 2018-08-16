@@ -27,7 +27,8 @@ A {
 
 		<tr>
 			<td style="font-weight: bold; font-size: 20pt;" align="center">Welcome
-				Your Name</td>
+				<%-- <%=request.getSession().getAttribute("LoggedInUser") %></td> --%>
+				<%=request.getAttribute("LoggedInUser") %></td>
 		</tr>
 		<tr>
 			<td align="right">&nbsp;</td>
@@ -49,7 +50,7 @@ A {
 			<td align="center">&nbsp;</td>
 		</tr>
 		<tr>
-			<td align="center"><a href="viewstatement.jsp">View
+			<td align="center"><a href="transaction">View
 					Transaction</a></td>
 		</tr>
 		<tr>
