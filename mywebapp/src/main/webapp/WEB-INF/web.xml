@@ -4,9 +4,26 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
 	<display-name>Archetype Created Web Application</display-name>
+	
+	<welcome-file-list>
+        <welcome-file>home.jsp</welcome-file>
+    </welcome-file-list>
 
-
+	<!-- DispatcherServlet is the root Servlet for any Servlet defined in your 
+		application. It will redirect the request made to the application to the 
+		appropriate controller based on the URL -->
+		
 	<servlet>
+		<servlet-name>spring-mvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>spring-mvc</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<!-- <servlet>
 		<servlet-name>Servlet1</servlet-name>
 		<servlet-class>com.java.servlet.CalculatorServlet</servlet-class>
 	</servlet>
@@ -14,8 +31,8 @@
 		<servlet-name>Servlet1</servlet-name>
 		<url-pattern>/calc</url-pattern>
 	</servlet-mapping>
-	
-	
+
+
 	<servlet>
 		<servlet-name>Login</servlet-name>
 		<servlet-class>com.bank.servlet.LoginServlet</servlet-class>
@@ -24,7 +41,7 @@
 		<servlet-name>Login</servlet-name>
 		<url-pattern>/login</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>transaction</servlet-name>
 		<servlet-class>com.bank.servlet.TransactionServlet</servlet-class>
@@ -32,17 +49,17 @@
 	<servlet-mapping>
 		<servlet-name>transaction</servlet-name>
 		<url-pattern>/transaction</url-pattern>
-	</servlet-mapping>
-	
-	
-	<welcome-file-list>
+	</servlet-mapping> -->
+
+
+	<!-- <welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>
 		<welcome-file>index.jsp</welcome-file>
 		<welcome-file>default.html</welcome-file>
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
-	</welcome-file-list>
+	</welcome-file-list> -->
 
 
 </web-app>

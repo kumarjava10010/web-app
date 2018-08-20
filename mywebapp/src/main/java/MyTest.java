@@ -1,12 +1,7 @@
-import java.util.Date;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.bank.persistance.dao.CustomerDaoIfc;
-import com.bank.persistance.dao.CustomerDaoImpl;
 import com.bank.persistance.model.AcctInfo;
-import com.bank.persistance.model.Customer;
 import com.bank.service.BankServiceIfc;
 
 

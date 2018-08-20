@@ -5,7 +5,11 @@ package com.bank.persistance.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 /**
@@ -14,7 +18,9 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "CUSTOMER")
-public class Customer implements java.io.Serializable{
+@NamedQueries({ @NamedQuery(name = "authenticate", query = "SELECT user FROM Customer user "
+		+ "WHERE user.username = :user AND user.password = :pass") })
+public class Customer implements java.io.Serializable {
 
 	/**
 	 * 
@@ -22,7 +28,7 @@ public class Customer implements java.io.Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name = "ACCT_NO")
+	@Column(name = "ACCT_NO",  unique = true, updatable = false, nullable = false)
 	private Integer acctNo;
 
 	@Column(name = "LastName")
@@ -45,6 +51,42 @@ public class Customer implements java.io.Serializable{
 
 	@Column(name = "ZipCode")
 	private String zipCode;
+
+	@Column(name = "USER_NAME")
+	private String username;
+
+	@Column(name = "PASSWORD")
+	private String password;
+
+	/**
+	 * @return the username
+	 */
+	public String getUsername() {
+		return username;
+	}
+
+	/**
+	 * @param username
+	 *            the username to set
+	 */
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	/**
+	 * @return the password
+	 */
+	public String getPassword() {
+		return password;
+	}
+
+	/**
+	 * @param password
+	 *            the password to set
+	 */
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	/**
 	 * @return the acctNo

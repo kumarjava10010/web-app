@@ -3,10 +3,8 @@ package com.bank.persistance.dao;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bank.persistance.model.AcctInfo;
@@ -24,30 +22,33 @@ public class AcctInfoDaoImpl implements AcctInfoDaoIfc {
 
 		logger.info("***** AcctInfoDaoImpl | Save | Start| ");
 
-		//Transaction tx = null;
 		Session session = null;
+
 		try {
 			session = sessionFactory.getCurrentSession();
-			//tx = session.beginTransaction();
 			session.save(account);
-			//session.flush();
-
-			//tx.commit();
 
 		} catch (Exception e) {
 			e.printStackTrace();
 			logger.error("AcctInfoDaoImpl Save Error : " + e.getMessage());
-			//tx.rollback();
 		} finally {
-			//session.close();
 		}
 
 		logger.info("***** AcctInfoDaoImpl | Save | END| ");
 	}
 
 	public void update(AcctInfo account) {
-		// getHibernateTemplate().update(account);
 
+		Session session = null;
+		try {
+			session = sessionFactory.getCurrentSession();
+			
+			session.update(account);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			logger.error("AcctInfoDaoImpl Save Error : " + e.getMessage());
+		}
 	}
 
 	public void delete(AcctInfo account) {
