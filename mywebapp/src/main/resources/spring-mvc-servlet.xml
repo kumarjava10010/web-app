@@ -15,4 +15,6 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
+	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
+	
 </beans>

@@ -24,13 +24,13 @@ A {
 	<br>
 	<form:form id="welcomeForm" modelAttribute="customer" method="post">
 
-		<table border=0 width="300px" align="center"
+		<table border=0 width="500px" align="center"
 			style="background-color: ffeeff;">
 
 			<tr>
 				<td style="font-weight: bold; font-size: 20pt;" align="center">Welcome
 					<%-- <%=request.getSession().getAttribute("LoggedInUser") %></td> --%>
-					${firstname} <form:hidden path="acctNo" />
+					${customer.firstname} <form:hidden path="acctNo" />
 				</td>
 			</tr>
 			<tr>
@@ -41,7 +41,7 @@ A {
 				<td align="right">&nbsp;</td>
 			</tr>
 			<tr>
-				<td align="center"><a href="getCustomerDetails">Update
+				<td align="center"><a href="getCustomerDetails/${customer.acctNo}">Update
 						profile</a></td>
 			</tr>
 			<tr>

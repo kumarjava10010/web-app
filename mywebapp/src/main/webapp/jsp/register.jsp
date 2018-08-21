@@ -4,14 +4,20 @@
 
 <html>
 <head>
-<script src="valid.js" type="text/javascript"></script>
+<style>
+.error {
+	color: red;
+	font-weight: bold;
+}
+</style>
+
 </head>
 
 <body>
 	<br>
 	<form:form id="customerForm" modelAttribute="customer"
 		action="customerSave" method="post">
-		<table width="350px" border=0 align="center"
+		<table width="500px" border=0 align="center"
 			style="background-color: ffeeff;">
 
 
@@ -28,28 +34,38 @@
 				<td>Account Number</td>
 				<td><form:input path="acctNo" name="acctNo" id="acctNo" /></td>
 			</tr>
-			
+
 			<tr>
 				<td>First Name</td>
-				<td><form:input path="firstName" name="firstName" id="firstName" /></td>
+				<td><form:input path="firstName" name="firstName"
+						id="firstName" /></td>
+				<td align="left"><form:errors path="firstName" cssClass="error" /></td>
 			</tr>
 			<tr>
 				<td>Last Name</td>
 				<td><form:input path="lastName" name="lastName" id="lastName" /></td>
+				<td align="left"><form:errors path="lastName" cssClass="error" /></td>
+
 			</tr>
 			<tr>
 
 				<td>Login Name</td>
 
 				<td><form:input path="username" name="username" id="username" /></td>
+				<td align="left"><form:errors path="username" cssClass="error" /></td>
+
 			</tr>
 			<tr>
 				<td>Password</td>
-				<td><form:password path="password" name="password" id="password" /></td>
+				<td><form:password path="password" name="password"
+						id="password" /></td>
+				<td align="left"><form:errors path="password" cssClass="error" /></td>
+
 			</tr>
 			<tr>
 				<td>SSN</td>
 				<td><form:input path="ssn" name="ssn" id="ssn" /></td>
+				<td align="left"><form:errors path="ssn" cssClass="error" /></td>
 			</tr>
 			<tr>
 				<td>Address</td>
@@ -78,7 +94,7 @@
 			</tr> -->
 
 		</table>
-		</form:form>
+	</form:form>
 </body>
 </html>
 

@@ -5,12 +5,14 @@ package com.bank.persistance.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  * @author cragh
@@ -31,9 +33,11 @@ public class Customer implements java.io.Serializable {
 	@Column(name = "ACCT_NO",  unique = true, updatable = false, nullable = false)
 	private Integer acctNo;
 
+	@Size(min = 3, max = 20, message = "Last namemust be between 3 and 20 characters ")
 	@Column(name = "LastName")
 	private String lastName;
 
+	@Size(min = 3, max = 20, message = "First namemust be between 3 and 20 characters ")
 	@Column(name = "FirstName")
 	private String firstName;
 
@@ -52,9 +56,13 @@ public class Customer implements java.io.Serializable {
 	@Column(name = "ZipCode")
 	private String zipCode;
 
+	@NotNull(message = "User Name should not be null or Empty")
+    @NotBlank(message = "User Name should not be null or Empty")
 	@Column(name = "USER_NAME")
 	private String username;
 
+	@NotNull(message = "Password should not be null or Empty")
+    @NotBlank(message = "Password should not be null or Empty")
 	@Column(name = "PASSWORD")
 	private String password;
 
