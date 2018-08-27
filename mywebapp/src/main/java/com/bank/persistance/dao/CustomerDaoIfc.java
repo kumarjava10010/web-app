@@ -5,7 +5,7 @@ import com.bank.persistance.model.LoginUser;
 
 public interface CustomerDaoIfc {
 
-	void save(Customer customer);
+	int save(Customer customer);
 	void update(Customer customer);
 	void delete(Customer customer);
 	Customer findByAcctNumber(int acctNumer);

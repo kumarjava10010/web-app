@@ -37,6 +37,9 @@ public class AcctInfo implements java.io.Serializable {
 
 	@Column(name = "LASTUPDATEDDATE")
 	private String lastupdateddate;
+	
+	private String transactionAmount;
+	private String transactionType;
 
 	public Integer getAcctNumber() {
 		return acctNumber;
@@ -77,6 +80,36 @@ public class AcctInfo implements java.io.Serializable {
 	public void setLastupdateddate(String lastupdateddate) {
 		this.lastupdateddate = lastupdateddate;
 	}
+
+	/**
+	 * @return the transactionAmount
+	 */
+	public String getTransactionAmount() {
+		return transactionAmount;
+	}
+
+	/**
+	 * @param transactionAmount the transactionAmount to set
+	 */
+	public void setTransactionAmount(String transactionAmount) {
+		this.transactionAmount = transactionAmount;
+	}
+
+	/**
+	 * @return the transactionType
+	 */
+	public String getTransactionType() {
+		return transactionType;
+	}
+
+	/**
+	 * @param transactionType the transactionType to set
+	 */
+	public void setTransactionType(String transactionType) {
+		this.transactionType = transactionType;
+	}
+	
+	
 
 
 }

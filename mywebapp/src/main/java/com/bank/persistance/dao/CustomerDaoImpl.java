@@ -19,7 +19,8 @@ public class CustomerDaoImpl implements CustomerDaoIfc {
 	@Autowired
 	SessionFactory sessionFactory;
 
-	public void save(Customer customer) {
+	public int save(Customer customer) {
+		int acctNumber = 0;
 		try {
 
 			String hql = "select max(customer.acctNo) from Customer customer";
@@ -28,7 +29,7 @@ public class CustomerDaoImpl implements CustomerDaoIfc {
 
 			Query query = session.createQuery(hql);
 			List list = query.list();
-			int acctNumber = (int) list.get(0);
+			 acctNumber = (int) list.get(0);
 			acctNumber = acctNumber + 1;
 			customer.setAcctNo(acctNumber);
 			session.save(customer);
@@ -36,6 +37,8 @@ public class CustomerDaoImpl implements CustomerDaoIfc {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
+		
+		return  acctNumber;
 	}
 
 	public void update(Customer customer) {

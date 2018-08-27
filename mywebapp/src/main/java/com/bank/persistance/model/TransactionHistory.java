@@ -3,22 +3,56 @@
  */
 package com.bank.persistance.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * @author cragh
  *
  */
-public class TransactionHistory {
+@Entity
+@Table(name = "acct_transaction_history")
+public class TransactionHistory implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name = "TRANSACTION_ID", unique = true, nullable = false)
 	public Integer transactionId;
+	
+	@Column(name = "ACCT_NO")
 	public Integer acctNo;
+	
+	@Column(name = "PREV_BALANCE")
 	public String prevBalance;
+	
+	@Column(name = "NEW_BALANCE")
 	public String newBalance;
+	
+	@Column(name = "TRANSACTION_AMOUNT")
 	public String transactionAmount;
+	
+	@Column(name = "TRANSACTION_TYPE")
 	public String transactionType;
+	
+	@Column(name = "TRANSACTION_DATE")
 	public String transactionDate;
+	
+	@Column(name = "BRANCH_NAME")
 	public String branchName;
+	
+	@Column(name = "DEPOSIT_TYPE")
 	public String depositType;
+	
+	@Column(name = "LASTUPDATEDBY")
 	public String lastupdatedby;
+	
+	@Column(name = "LASTUPDATEDDATE")
 	public String lastupdateddate;
 
 	/**

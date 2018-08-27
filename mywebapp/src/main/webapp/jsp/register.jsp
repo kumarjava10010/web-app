@@ -15,7 +15,7 @@
 
 <body>
 	<br>
-	<form:form id="customerForm" modelAttribute="customer"
+	<form:form id="customerForm" modelAttribute="customerObject"
 		action="customerSave" method="post">
 		<table width="500px" border=0 align="center"
 			style="background-color: ffeeff;">

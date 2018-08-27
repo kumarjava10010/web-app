@@ -1,3 +1,7 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+
 <html>
 <head>
 <style>
@@ -22,7 +26,7 @@ A {
 	<br>
 	<br>
 	<br>
-	<form:form id="welcomeForm" modelAttribute="customer" method="post">
+	<form:form id="welcomeForm" modelAttribute="customer" action = "customerAction" method="post">
 
 		<table border=0 width="500px" align="center"
 			style="background-color: ffeeff;">
@@ -30,37 +34,44 @@ A {
 			<tr>
 				<td style="font-weight: bold; font-size: 20pt;" align="center">Welcome
 					<%-- <%=request.getSession().getAttribute("LoggedInUser") %></td> --%>
-					${customer.firstname} <form:hidden path="acctNo" />
+					${customer.firstName} <form:hidden path="acctNo" />
 				</td>
 			</tr>
 			<tr>
-				<td><a href="home.jsp">Home</a></td>
+				<!-- <td><a href="home.jsp">Home</a></td> -->
+				<td align="center"><input type="submit" name="home"
+					value="Home" /></td>
 			</tr>
 
 			<tr>
 				<td align="right">&nbsp;</td>
 			</tr>
 			<tr>
-				<td align="center"><a href="getCustomerDetails/${customer.acctNo}">Update
-						profile</a></td>
+				<td align="center"><input type="submit" name="updateProfile"
+					value="Update profile" /></td>
+
 			</tr>
 			<tr>
 				<td align="right">&nbsp;</td>
 			</tr>
 			<tr>
-				<td align="center"><a href="cash.jsp">Account Summary</a></td>
+
+				<td align="center"><input type="submit" name="accountSummary"
+					value="Account Summary" /></td>
 			</tr>
 			<tr>
 				<td align="right">&nbsp;</td>
 			</tr>
 			<tr>
-				<td align="center"><a href="cash.jsp">Deposit/Withdraw</a></td>
+				<td align="center"><input type="submit" name="deposit"
+					value="Deposit/Withdraw" /></td>
 			</tr>
 			<tr>
 				<td align="center">&nbsp;</td>
 			</tr>
 			<tr>
-				<td align="center"><a href="transaction">View Transaction</a></td>
+				<td align="center"><input type="submit" name="transaction"
+					value="View Transaction" /></td>
 			</tr>
 			<tr>
 				<td align="center">&nbsp;</td>
