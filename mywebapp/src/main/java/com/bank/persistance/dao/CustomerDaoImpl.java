@@ -2,6 +2,8 @@ package com.bank.persistance.dao;
 
 import java.util.List;
 
+import javax.jws.WebMethod;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

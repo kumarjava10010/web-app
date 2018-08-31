@@ -5,12 +5,11 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.bank.persistance.model.AcctInfo;
 
 @Repository("acctInfoDao")
-@Transactional
+//@Transactional
 public class AcctInfoDaoImpl implements AcctInfoDaoIfc {
 
 	final static Logger logger = Logger.getLogger(AcctInfoDaoImpl.class);
@@ -58,6 +57,8 @@ public class AcctInfoDaoImpl implements AcctInfoDaoIfc {
 
 	public AcctInfo findByAcctNumber(int acctNumber) {
 		logger.info("***** AcctInfoDaoImpl | findByAcctNumber | Start| ");
+		
+		System.out.println("I am in AccountDAO class : "+acctNumber);
 
 		Session session = null;
 		AcctInfo acctInfo = null;

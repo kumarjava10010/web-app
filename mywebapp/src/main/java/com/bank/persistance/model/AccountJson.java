@@ -1,86 +1,91 @@
-/**
- * 
- */
 package com.bank.persistance.model;
 
+public class AccountJson {
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
-/**
- * @author cragh
- *
- */
-@Entity
-@Table(name = "ACCT_INFO")
-public class AcctInfo implements java.io.Serializable {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 4295416422691613836L;
-
-	@Id
-	@Column(name = "ACCT_NO", unique = true, nullable = false)
 	private Integer acctNumber;
 
-	@Column(name = "ACCT_TYPE")
 	private String acctType;
 
-	@Column(name = "BALANCE")
 	private String balance;
 
-	@Column(name = "LASTUPDATEDBY")
 	private String lastupdatedby;
 
-	@Column(name = "LASTUPDATEDDATE")
 	private String lastupdateddate;
-	
+
 	private String transactionAmount;
 	private String transactionType;
-	
-	/*@OneToOne()
-	TransactionHistory transaction;*/
 
+	/**
+	 * @return the acctNumber
+	 */
 	public Integer getAcctNumber() {
 		return acctNumber;
 	}
 
+	/**
+	 * @param acctNumber
+	 *            the acctNumber to set
+	 */
 	public void setAcctNumber(Integer acctNumber) {
 		this.acctNumber = acctNumber;
 	}
 
+	/**
+	 * @return the acctType
+	 */
 	public String getAcctType() {
 		return acctType;
 	}
 
+	/**
+	 * @param acctType
+	 *            the acctType to set
+	 */
 	public void setAcctType(String acctType) {
 		this.acctType = acctType;
 	}
 
+	/**
+	 * @return the balance
+	 */
 	public String getBalance() {
 		return balance;
 	}
 
+	/**
+	 * @param balance
+	 *            the balance to set
+	 */
 	public void setBalance(String balance) {
 		this.balance = balance;
 	}
 
+	/**
+	 * @return the lastupdatedby
+	 */
 	public String getLastupdatedby() {
 		return lastupdatedby;
 	}
 
+	/**
+	 * @param lastupdatedby
+	 *            the lastupdatedby to set
+	 */
 	public void setLastupdatedby(String lastupdatedby) {
 		this.lastupdatedby = lastupdatedby;
 	}
 
+	/**
+	 * @return the lastupdateddate
+	 */
 	public String getLastupdateddate() {
 		return lastupdateddate;
 	}
 
+	/**
+	 * @param lastupdateddate
+	 *            the lastupdateddate to set
+	 */
 	public void setLastupdateddate(String lastupdateddate) {
 		this.lastupdateddate = lastupdateddate;
 	}
@@ -93,7 +98,8 @@ public class AcctInfo implements java.io.Serializable {
 	}
 
 	/**
-	 * @param transactionAmount the transactionAmount to set
+	 * @param transactionAmount
+	 *            the transactionAmount to set
 	 */
 	public void setTransactionAmount(String transactionAmount) {
 		this.transactionAmount = transactionAmount;
@@ -107,7 +113,8 @@ public class AcctInfo implements java.io.Serializable {
 	}
 
 	/**
-	 * @param transactionType the transactionType to set
+	 * @param transactionType
+	 *            the transactionType to set
 	 */
 	public void setTransactionType(String transactionType) {
 		this.transactionType = transactionType;
@@ -118,10 +125,11 @@ public class AcctInfo implements java.io.Serializable {
 	 */
 	@Override
 	public String toString() {
-		return "AcctInfo [acctNumber=" + acctNumber + ", acctType=" + acctType + ", balance=" + balance
+		return "AccountJson [acctNumber=" + acctNumber + ", acctType=" + acctType + ", balance=" + balance
 				+ ", lastupdatedby=" + lastupdatedby + ", lastupdateddate=" + lastupdateddate + ", transactionAmount="
 				+ transactionAmount + ", transactionType=" + transactionType + "]";
 	}
+	
 	
 
 }

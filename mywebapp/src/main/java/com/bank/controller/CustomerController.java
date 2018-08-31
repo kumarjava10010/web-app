@@ -23,16 +23,13 @@ import com.bank.persistance.dao.CustomerDaoIfc;
 import com.bank.persistance.model.AcctInfo;
 import com.bank.persistance.model.Customer;
 import com.bank.persistance.model.CustomerValidator;
+import com.bank.service.CustomerServiceIfc;
 
 @Controller
 public class CustomerController {
 
 	@Autowired
-	// LoginDaoIfc loginDao;
-	CustomerDaoIfc customerDao;
-
-	@Autowired
-	AcctInfoDaoIfc acctInfoDao;
+	CustomerServiceIfc customerService;
 	
 	@Autowired
 	private Validator validator;
@@ -68,22 +65,10 @@ public class CustomerController {
 		}
 
 		if (customer.getAcctNo() == null) {
-
-			int acctNo = customerDao.save(customer);
-			
-			AcctInfo acctInfo = new AcctInfo();
-			acctInfo.setAcctNumber(acctNo);
-			acctInfo.setAcctType("C");
-			acctInfo.setBalance("0.0");
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			String date = sdf.format(new Date()); 
-			acctInfo.setLastupdateddate(date);
-			acctInfo.setLastupdatedby(customer.getUsername());
-			
-			acctInfoDao.save(acctInfo);
+			customerService.createCustomer(customer);
 
 		} else {
-			customerDao.update(customer);
+			customerService.updateCustomer(customer);
 
 		}
 		// I am passing my welcome View Name
